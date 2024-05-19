@@ -92,7 +92,7 @@ SELECT
 INTO
     dimCafes
 FROM
-    maps_google_scraped
+    maps_google_scraped;
 
 
 SELECT * FROM dimCafes
@@ -128,11 +128,17 @@ SELECT
             )))
         ELSE
             LTRIM(RTRIM(SUBSTRING(neigbourhood, 1, CHARINDEX(',', neigbourhood) - 1)))
-    END AS neighbourhoodPart
+    END AS neighbourhoodPart,
+    neigbourhood AS neighbourhoodAll,
+    postalCode
 INTO
     dimGeo
 FROM
-    maps_google_scraped
+    maps_google_scraped;
 
 
-SELECT * FROM dimGeo
+SELECT * FROM dimGeo WHERE neighbourhoodPart = N'Brno - Líšeň'
+
+UPDATE dimGeo
+SET neighbourhoodPart = N'Líšeň'
+WHERE neighbourhoodPart = N'Brno - Líšeň';

@@ -1,4 +1,4 @@
-/*********** ODMAZÁVÁNÍ NECHTĚNÝCH PODNIKŮ *************/
+/*********** ODMAZÁVÁNÍ NECHTĚNÝCH PODNIKŮ OBJEVENÝCH BĚHEM PRÁCE S DATY *************/
 
 SELECT *
 FROM dimCafes

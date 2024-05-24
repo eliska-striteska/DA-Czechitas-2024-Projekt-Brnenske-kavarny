@@ -1,5 +1,5 @@
 # Script pro stažení dat z https://nominatim.org/release-docs/latest/api/Overview/
-# získání informace o katastrálním území, na kterém se kavárna nachází (zjišťováno podle souřadnic)
+# informace o katastrálním území (na kterém se kavárna nachází) získaná ze souřadnic
 
 import geopy
 import geopy.geocoders

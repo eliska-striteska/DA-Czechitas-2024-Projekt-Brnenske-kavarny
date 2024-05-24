@@ -1,11 +1,11 @@
 # Ucelený kód pro práci s daty staženými přes Apify Google maps Extractor
-# a pro vytvoření základního datasetu pro SQL databázi
+# Vytvoření základního datasetu pro SQL databázi
 
 import json
 
 
 def filter_keys_in_list_of_cafes(data, keys):
-    # filtruje klíče ve slovnících "cafe" obsažených v celkovém seznamu
+    # filtruje klíče ve slovnících obsažených v datech
     # parametry: data = stažená data, keys = seznam klíčů, které chceme zachovat
     filtered_data = []
     for cafe in data:
@@ -132,7 +132,7 @@ with open(
 
 
 # Porovnávání názvů kaváren (cafe["title"]) v jednotlivých datasetech:
-# vytvoření množiny titulů, které jsou v doplňkových datasetech (stažených podle kategorií) a v prvním datasetu chybí
+# vytvoření množiny titulů, které jsou v doplňkových datasetech (stažených podle kategorií) a v hlavním datasetu chybí
 set_cafe = set(cafe["title"] for cafe in category_cafe_filtered)
 set_kavarna = set(cafe["title"] for cafe in cafes_filtered)
 
